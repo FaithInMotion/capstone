@@ -1,9 +1,17 @@
 #!/bin/bash
 
-apt-get install php5 -y
+export DEBIAN_FRONTEND=noninteractive
+apt-get install -y php5 mysql-server mysql-client
 
 cp -Rf /vagrant/apache2/* /etc/apache2/
 service apache2 restart
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
 composer global require laravel/lumen-installer=~1.0
+
+cp /vagrant/my.cnf /etc/mysql/
+
+service mysql restart
+
+mysql -u root -e "grant all on *.* to 'root'@'%' with grant option"
+mysql -u root -e 'flush privileges'
