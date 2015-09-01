@@ -18,3 +18,5 @@ vagrant ssh - Moves commands into the virtual machine
 vagrant halt - Stops vagrant
 
 vagrant destroy - remove created box, sometimes needs to be done
+
+testing SHIR
