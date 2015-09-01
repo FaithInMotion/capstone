@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUsersTable extends Migration
+class CreateCharactersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,12 +12,12 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('users');
-        \Illuminate\Support\Facades\Schema::create('users', function($table)
+        \Illuminate\Support\Facades\Schema::dropIfExists('story_characters');
+        \Illuminate\Support\Facades\Schema::create('story_characters', function($table)
         {
             $table->increments('id');
-            $table->string('name', 100);
-            $table->string('password', 255);
+            $table->integer('story_id');
+            $table->foreign('story_id')->references('id')->on('user_stories');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('users');
+        \Illuminate\Support\Facades\Schema::dropIfExists('story_characters');
     }
 }
