@@ -14,6 +14,11 @@ class Story_Scenery extends BaseController
          */
 
         /*
+         * TODO: Make sure the requested story even exists!
+         * Need a model first...
+         */
+
+        /*
          * Setup our data which we will pass to the view
          * The view can then use it to display what we hand it
          */
