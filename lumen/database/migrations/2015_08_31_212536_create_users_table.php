@@ -12,10 +12,10 @@ class CreateUsersTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('users');
-        \Illuminate\Support\Facades\Schema::create('users', function($table)
+        Schema::dropIfExists('users');
+        Schema::create('users', function($table)
         {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('name', 100);
             $table->string('password', 255);
             $table->timestamps();
@@ -29,6 +29,6 @@ class CreateUsersTable extends Migration
      */
     public function down()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('users');
+        Schema::dropIfExists('users');
     }
 }

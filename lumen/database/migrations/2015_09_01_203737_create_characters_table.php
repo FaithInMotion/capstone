@@ -12,13 +12,18 @@ class CreateCharactersTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('story_characters');
-        \Illuminate\Support\Facades\Schema::create('story_characters', function($table)
+        Schema::dropIfExists('story_characters');
+        Schema::create('story_characters', function($table)
         {
             $table->increments('id');
-            $table->integer('story_id');
-            $table->foreign('story_id')->references('id')->on('user_stories');
+            $table->string('name', 200);
+            $table->integer('story_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('story_characters', function($table)
+        {
+            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
         });
     }
 
@@ -29,6 +34,6 @@ class CreateCharactersTable extends Migration
      */
     public function down()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('story_characters');
+        Schema::dropIfExists('story_characters');
     }
 }

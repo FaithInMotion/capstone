@@ -12,13 +12,17 @@ class CreateContributorsTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('story_contributors');
-        \Illuminate\Support\Facades\Schema::create('story_contributors', function($table)
+        Schema::dropIfExists('story_contributors');
+        Schema::create('story_contributors', function($table)
         {
             $table->increments('id');
-            $table->integer('story_id');
-            $table->foreign('story_id')->references('id')->on('user_stories');
+            $table->integer('story_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('story_contributors', function($table)
+        {
+            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
         });
     }
 
@@ -29,6 +33,6 @@ class CreateContributorsTable extends Migration
      */
     public function down()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('story_contributors');
+        Schema::dropIfExists('story_contributors');
     }
 }

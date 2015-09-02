@@ -12,14 +12,18 @@ class CreateStoriesTable extends Migration
      */
     public function up()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('user_stories');
-        \Illuminate\Support\Facades\Schema::create('user_stories', function($table)
+        Schema::dropIfExists('user_stories');
+        Schema::create('user_stories', function($table)
         {
-            $table->increments('id');
+            $table->increments('id')->unsigned();
             $table->string('title', 200);
-            $table->integer('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('user_stories', function($table)
+        {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
@@ -30,6 +34,6 @@ class CreateStoriesTable extends Migration
      */
     public function down()
     {
-        \Illuminate\Support\Facades\Schema::dropIfExists('user_stories');
+        Schema::dropIfExists('user_stories');
     }
 }
