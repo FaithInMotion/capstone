@@ -31,9 +31,15 @@ Continue to finish "thoughts" until your entire "idea" is complete. Once you are
 ## Creating a Pull Request
 This lets me know that you are completely done and want your work put in the main system.
 
-
-
-
+After you have pushed your branch to github:
+ - [ ] Log in to github in browser
+ - [ ] Click on FaithInMotion/capstone to view the repository
+ - [ ] You should see a message in plain view that you have recently pushed a branch. There should be a green button to Compare and Pull Request]
+ - [ ] IF there is a warning that your branch cannot be merged (but you can still create the merge request) - DO NOT create the pull request. Instead, go back into command line and 
+ follow the steps to update and merge master into your branch. Push again and then follow the steps above.
+ - [ ] If your branch is fit to be merged in (no merge conflicts), create the pull request
+ - [ ] Under "Assignees" on the left, click the gear and add FaithInMotion.
+ - [ ] Alert me in skype that you have created a merge request. I will then get it merged into master
 
 ## When Master gets updated...
 You may want to wait until you've made your last commit in a branch to update master, as sometimes switching branches can be easily messed up. 
