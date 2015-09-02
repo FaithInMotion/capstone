@@ -64,7 +64,6 @@ Finally, put back the changes you had been working on.
     git stash pop
 
 ## Other commands you may want to use at some point...
-
 Show what is staged and not staged for a commit
 
     git status
@@ -89,7 +88,6 @@ Different ways of creating a commit
     git commit -m '<Message>' - Same as commit but in-line message accepted
 
 ## Vagrant Commands
-
     vagrant up - Starts vagrant
     vagrant ssh - Moves commands into the virtual machine
     vagrant halt - Stops vagrant
