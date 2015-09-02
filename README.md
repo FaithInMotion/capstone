@@ -1,4 +1,4 @@
-# capstone
+# CAPSTONE
 
 ## Working through a New Issue (Branch Creation)
 Note: remove any <>
