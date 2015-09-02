@@ -88,7 +88,41 @@ Different ways of creating a commit
     git commit -m '<Message>' - Same as commit but in-line message accepted
 
 ## Vagrant Commands
+Vagrant needs to be running to create and run database migrations, and to view the application locally in a web browser.
+
     vagrant up - Starts vagrant
     vagrant ssh - Moves commands into the virtual machine
     vagrant halt - Stops vagrant
     vagrant destroy - remove created box, sometimes needs to be done. Follow with vagrant up to recreate the vm
+
+To view the application in browser, run vagrant up and then visit:
+
+    http://localhost:8080/
+
+## Creating and Running Migrations
+This is slightly tricky but will be extremely necessary to our project. The hardest part is understanding the vm Vagrant is using to launch our Lumen application.
+
+Once you are ready to start working on migrations or view our web application, cd into your project directory and start Vagrant, then ssh inside of the now-running vm.
+These commands can be run from any branch, and from any folder inside your project, but you MUST be inside the project.
+
+    vagrant up
+    vagrant ssh
+
+Now that you are inside the vm, you need to cd into the correct Lumen directory to make use of the "php artisan" commands. You may notice the artisan php file in our 
+directory - this is the file we will be running.
+
+    cd /vagrant/lumen
+
+There are a few artisan commands we need to be aware of.
+
+Run all migrations in the application (good for reseting your database)
+
+    php artisan migrate
+
+Create a migration: This command will create a file inside of lumen/database/migrations - you will edit that file in your text editor after running this command.
+I have left migration names for you here for reference - you will change this to read whatever you are creating/adding. 
+Please note how specific these names are. Don't forget to remove the <>.
+
+    php artisan make:migration <create_users_table>
+    php artisan make:migration <add_needed_columns_to_users_table>
+    More information: http://laravel.com/docs/5.1/migrations
