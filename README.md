@@ -126,3 +126,11 @@ Please note how specific these names are. Don't forget to remove the <>.
     php artisan make:migration <create_users_table>
     php artisan make:migration <add_needed_columns_to_users_table>
     More information: http://laravel.com/docs/5.1/migrations
+
+## Connecting to the Database with an External Program
+I suggest MySql Workbench or Sequel Pro. Here are the connection settings (Vagrant HAS to be running for you to connect):
+
+    Hostname: 127.0.0.1
+    Port: 13306
+    Username: root
+    Password: NONE (no password needed)
