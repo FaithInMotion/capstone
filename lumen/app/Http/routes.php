@@ -14,3 +14,8 @@
 $app->get('/', function () use ($app) {
     return $app->welcome();
 });
+
+$app->get('/test_view',  [
+//    'uses' => 'Users@TestMethod'
+    'as' => 'testing', 'uses' => 'Users@TestMethod'
+]);

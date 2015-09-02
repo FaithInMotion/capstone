@@ -4,6 +4,7 @@ export DEBIAN_FRONTEND=noninteractive
 apt-get install -y php5 mysql-server mysql-client php5-gd php5-mysql
 
 cp -Rf /vagrant/apache2/* /etc/apache2/
+a2enmod rewrite
 service apache2 restart
 
 curl -sS https://getcomposer.org/installer | sudo php -- --install-dir=/usr/local/bin --filename=composer
