@@ -36,4 +36,9 @@ class Story_Scenery extends BaseController
 
         return view('scenery/list', $data);
     }
+
+    public function create ()
+    {
+        return view('scenery.create');
+    }
 }
