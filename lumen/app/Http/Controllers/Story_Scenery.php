@@ -7,7 +7,7 @@ use Laravel\Lumen\Routing\Controller as BaseController;
 
 class Story_Scenery extends BaseController
 {
-    public function list_scenery ($story_id = null)
+    public function list_scenery($story_id = null)
     {
         /*
          * TODO: Need user validation - don't show page to anyone but author/contributors
@@ -35,5 +35,14 @@ class Story_Scenery extends BaseController
         $data['scenery'] = $scenery;
 
         return view('scenery/list', $data);
+    }
+
+    public function create()
+    {
+        /*
+         * TODO: Need the story id in order to redirect back to the scenery listing
+         */
+
+        return view('scenery.create');
     }
 }
