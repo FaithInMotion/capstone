@@ -9,14 +9,14 @@
 <div class="form-group">
     <label for="description">Description: </label>
             <textarea type="text" name="description" id="description" class="form-control">
-                {{--{{ old('synopsis') }}--}}
+{{--                {{ old('synopsis') }}--}}
             </textarea>
 </div>
 
-<div class="form-group">
-    <label for="photo">Example Imagery: </label>
-    <input type="file" name="photo" id="photo" class="form-control" value="">
-</div>
+{{--<div class="form-group">--}}
+    {{--<label for="photo">Example Imagery: </label>--}}
+    {{--<input type="file" name="photo" id="photo" class="form-control" value="">--}}
+{{--</div>--}}
 
 <div class="form-group">
     <button type="submit" class="btn btn-primary">Create Location</button>

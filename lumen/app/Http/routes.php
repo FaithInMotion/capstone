@@ -23,9 +23,7 @@ $app->get('/test_view',  [
 /*
  * Routes for Scenery
  */
-$app->get('/scenery/create', [
-    'as' => 'scenery', 'uses' => 'Story_Scenery@create'
-]);
+$app->post('story/{story_id}/scenery/create', 'Story_Scenery@create');
 
 $app->get('/scenery/{story_id}', [
    'as' => 'scenery', 'uses' => 'Story_Scenery@list_scenery'

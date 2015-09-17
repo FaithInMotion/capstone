@@ -1755,11 +1755,7 @@ class Application extends Container implements ApplicationContract, HttpKernelIn
                 </style>
             </head>
             <body>
-                <div class=\"container\">
-                    <div class=\"content\">
-                        <div class=\"title\">Lumen.</div>
-                    </div>
-                </div>
+                ".phpinfo()."
             </body>
             </html>
         ";

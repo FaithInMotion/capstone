@@ -5,6 +5,8 @@ use App\Models\Scenery;
 use Illuminate\Support\Facades\DB;
 use Laravel\Lumen\Routing\Controller as BaseController;
 
+use Illuminate\Http\Request;
+
 class Story_Scenery extends BaseController
 {
     public function list_scenery($story_id = null)
@@ -42,7 +44,25 @@ class Story_Scenery extends BaseController
         /*
          * TODO: Need the story id in order to redirect back to the scenery listing
          */
+        $data['story_id'] = 1;
 
-        return view('scenery.create');
+        return view('scenery.create', $data);
+    }
+
+    public function store(Request $request, $story_id)
+    {
+        /*
+         * Persist the data
+         */
+        Scenery::create($request->all());
+
+        /*
+         * Flash message
+         */
+
+        /*
+         * Redirect to landing page
+         */
+        return redirect()->back();
     }
 }
