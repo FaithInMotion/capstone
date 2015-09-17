@@ -14,3 +14,15 @@
 $app->get('/', function () use ($app) {
     return $app->welcome();
 });
+
+$app->get('/test_view',  [
+//    'uses' => 'Users@TestMethod'
+    'as' => 'testing', 'uses' => 'Users@TestMethod'
+]);
+
+/*
+ * Routes for Scenery
+ */
+$app->get('/scenery/{story_id}', [
+   'as' => 'scenery', 'uses' => 'Story_Scenery@list_scenery'
+]);
