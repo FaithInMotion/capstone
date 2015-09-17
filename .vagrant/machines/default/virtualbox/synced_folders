@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www/blog":{"owner":"www-data","group":"www-data","guestpath":"/var/www/blog","hostpath":"/Users/Legend/school/capstone/project","disabled":false},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Users/Legend/school/capstone","disabled":false}}}
