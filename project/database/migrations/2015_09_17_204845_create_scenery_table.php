@@ -16,16 +16,16 @@ class CreateSceneryTable extends Migration
         Schema::create('story_scenery', function($table)
         {
             $table->increments('id');
-            $table->integer('story_id')->unsigned();
+//            $table->integer('story_id')->unsigned();
             $table->string('name', 200);
             $table->string('description', 255);
             $table->timestamps();
         });
 
-        Schema::table('story_scenery', function($table)
-        {
-            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
-        });
+//        Schema::table('story_scenery', function($table)
+//        {
+//            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
+//        });
     }
 
     /**
