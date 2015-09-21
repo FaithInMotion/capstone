@@ -18,4 +18,4 @@ mysql -u root -e 'create database if not exists capstone'
 mysql -u root -e "grant all on *.* to 'root'@'%' with grant option"
 mysql -u root -e 'flush privileges'
 
-cd /vagrant/lumen; php artisan migrate
+cd /vagrant/project; php artisan migrate
