@@ -37,7 +37,8 @@ class StoryCharacters extends Controller
      */
     public function create()
     {
-        //
+        $data['story_id'] = 1;
+        return view('character.create', $data);
     }
 
     /**

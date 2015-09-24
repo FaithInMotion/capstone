@@ -19,3 +19,8 @@ Route::get('/', function () {
  * Routes for Scenery
  */
 Route::resource('scenery', 'StoryScenery');
+
+/*
+ * Routes for Characters
+ */
+Route::resource('character', 'StoryCharacters');
