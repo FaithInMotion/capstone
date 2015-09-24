@@ -16,8 +16,12 @@ class CreateCharactersTable extends Migration
         Schema::create('story_characters', function($table)
         {
             $table->increments('id');
-            $table->string('name', 200);
             $table->integer('story_id')->unsigned();
+            $table->string('name', 200);
+            $table->string('description', 512);
+            $table->integer('age');
+            $table->string('height', 10);
+            $table->integer('weight');
             $table->timestamps();
         });
 
