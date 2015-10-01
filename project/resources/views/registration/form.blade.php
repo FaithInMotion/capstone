@@ -1,3 +1,6 @@
+{{--This is absolutely required--}}
+{{ csrf_field() }}
+
 <div class="form-group">
     <label for="name">Display Name: </label>
     <input type="text" name="displayname" id="displayname" class="form-control" value="">

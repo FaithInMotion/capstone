@@ -24,3 +24,8 @@ Route::resource('scenery', 'StoryScenery');
  * Routes for Characters
  */
 Route::resource('character', 'StoryCharacters');
+
+/*
+ * Routes for Users
+ */
+Route::resource('user', 'Users');

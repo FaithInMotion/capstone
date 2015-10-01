@@ -6,7 +6,7 @@
     <hr>
 
 
-    <form method="POST" action="/registration/{{ $users }}" enctype="multipart/form-data">
+    <form method="POST" action="/user" enctype="multipart/form-data">
 
 
         @include('registration.form')
