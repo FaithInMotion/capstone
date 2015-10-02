@@ -1,6 +1,7 @@
 @extends('layouts/master')
-
 @section('content')
+    <div class="container">
+        <div class="main_content floatleft">
 
     <h1>Create New Place</h1>
     <hr>
@@ -23,5 +24,7 @@
         @include('scenery.form')
 
     </form>
+    </div>
+    </div>
 
 @stop
