@@ -64,9 +64,16 @@ class StoryScenery extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+//    public function show($story_id, $id)
     public function show($id)
     {
-        //
+        /*
+         * Returns the requested scenery as a location
+         */
+//        $scenery = Scenery::where(compact('story_id', 'id'))->first();
+        $location = Scenery::where(compact('id'))->first();
+
+        return view('scenery.show', compact('location'));
     }
 
     /**
