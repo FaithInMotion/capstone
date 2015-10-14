@@ -21,6 +21,14 @@ Route::get('/', function () {
 Route::resource('scenery', 'StoryScenery');
 
 /*
+ * Routes for Stories
+ */
+Route::resource('story', 'stories');
+Route::get('{id}', 'stories@show');
+//Route::get('{user_id}/{story_id}', 'stories@show');
+
+
+/*
  * Routes for Characters
  */
 Route::resource('character', 'StoryCharacters');
