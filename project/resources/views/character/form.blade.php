@@ -1,3 +1,5 @@
+{{ csrf_field() }}
+
 <div class="form-group">
     <label for="name">Name: </label>
     <input type="text" name="name" id="name" class="form-control" value="">
@@ -6,9 +8,7 @@
 
 <div class="form-group">
     <label for="description">Description: </label>
-            <textarea type="text" name="description" id="description" class="form-control">
-
-            </textarea>
+            <textarea type="text" name="description" id="description" class="form-control"></textarea>
 </div>
 
 <div class="form-group">

@@ -6,7 +6,7 @@
     <hr>
 
 
-    <form method="POST" action="/character/{{ $story_id }}" enctype="multipart/form-data">
+    <form method="POST" action="/character" enctype="multipart/form-data">
 
 
         @include('character.form')
