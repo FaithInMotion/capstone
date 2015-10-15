@@ -16,7 +16,7 @@ class CreateCharactersTable extends Migration
         Schema::create('story_characters', function($table)
         {
             $table->increments('id');
-            $table->integer('story_id')->unsigned();
+//            $table->integer('story_id')->unsigned();
             $table->string('name', 200);
             $table->string('description', 512);
             $table->integer('age');
@@ -25,10 +25,10 @@ class CreateCharactersTable extends Migration
             $table->timestamps();
         });
 
-        Schema::table('story_characters', function($table)
-        {
-            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
-        });
+//        Schema::table('story_characters', function($table)
+//        {
+//            $table->foreign('story_id')->references('id')->on('user_stories')->onDelete('cascade');
+//        });
     }
 
     /**
