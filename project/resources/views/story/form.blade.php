@@ -1,30 +1,23 @@
 {{ csrf_field() }}
 
-
-
 <!--TITLE-->
-<div class="form-group">
-    <label for="title">Title</label>
-    <input type="text" name="title" id="title" class="form-control" value="Test5">
-</div>
-
+    <label for="title"><span>Title</span>
+    <input type="text" name="title" id="title" class="form-control" placeholder="Story's Title">
+    </label>
 <!--GENRE-->
-<div class="form-group">
-    <label for="genre">Genre</label>
-    <input type="text" name="genre" id="genre" class="form-control" value="Horror">
-</div>
+
+    <label for="genre"><span>Genre</span>
+    <input type="text" name="genre" id="genre" class="form-control" placeholder="Story's Genre">
+    </label>
 
 <!--SYNOPSIS-->
-<div class="form-group">
-    <label for="synopsis">Synopsis</label>
-    <textarea rows="3" name="synopsis" id="synopsis" class="form-control">Once apon a peck</textarea>
-</div>
+    <label for="synopsis"><span>Synopsis</span>
+    <textarea rows="3" name="synopsis" id="synopsis" class="form-control" placeholder="Story's Synopsis"></textarea>
+    </label>
 
 <!--CREATE BUTTON-->
-<div class="form-group">
-    <input type="submit" name="create" value="Create">
-</div>
-<br>
+<label>
+    <span></span>
+    <input type="submit" name="create" value="Create" class="button">
+</label>
 
-<?php
-echo "Today is ".date("m/d/Y")."!";
