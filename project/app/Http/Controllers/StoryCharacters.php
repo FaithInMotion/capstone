@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\StoryCharacter;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\CharacterRequest;
 
 class StoryCharacters extends Controller
 {
@@ -18,7 +20,7 @@ class StoryCharacters extends Controller
         $data = array();
 
         /*
-         * Retrieve all scenery associated with this story
+         * Retrieve all the Characters associated with this story
          */
         $character = Characters::where('story_id', '=', $character_id)->get();
 
@@ -39,6 +41,7 @@ class StoryCharacters extends Controller
     {
         $data['story_id'] = 1;
         return view('character.create', $data);
+
     }
 
     /**
@@ -47,9 +50,13 @@ class StoryCharacters extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(CharacterRequest $request)
     {
-        //
+        StoryCharacter::create($request->all());
+
+
+
+        return redirect()->back();
     }
 
     /**

@@ -20,7 +20,7 @@
             </div>
         @endif
 
-        {{--This line includes the form piece, pulled out to make things cleaner--}}
+
         @include('scenery.form')
 
     </form>
