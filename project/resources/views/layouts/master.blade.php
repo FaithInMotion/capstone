@@ -8,7 +8,7 @@
     <!-- Font Awesome -->
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="fonts/HelveticaNeue/font.css">
-    <link href="styles.css" rel="stylesheet" media="screen">
+    <link href="/styles.css" rel="stylesheet" media="screen">
     <link href="responsive.css" rel="stylesheet" media="screen">
 </head>
 
@@ -36,10 +36,10 @@
         <div class="main_menu">
             <nav>
                 <ul id="nav2">
-                    <li><a href="">Home</a></li>
+                    <li><a href="/">Home</a></li>
                     <li><a href="">Login</a></li>
                     <li><a href="">Register</a></li>
-                    <li><a href="">Create new Story</a></li>
+                    <li><a href="/story/create">Create new Story</a></li>
                 </ul>
             </nav>
         </div>
@@ -126,7 +126,7 @@
                     <div class="fix single_footer_top floatleft">
                         <h2><span>Create</span></h2>
                         <ul>
-                            <li><a href="">Create a new story</a></li>
+                            <li><a href="/story/create">Create a new story</a></li>
                         </ul>
                     </div>
                     <div class="fix single_footer_top floatleft">
