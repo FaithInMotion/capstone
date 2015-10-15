@@ -2,34 +2,50 @@
 
 namespace App\Http\Controllers;
 
-use App\StoryCharacter;
-use Illuminate\Http\Request;
-use App\Http\Requests;
-use App\Http\Controllers\Controller;
-use App\Http\Requests\CharacterRequest;
 
-class StoryCharacters extends Controller
+use Illuminate\Http\Request;
+use App\story;
+use App\Http\Requests;
+use App\Http\Requests\StoryRequest;
+use App\Http\Controllers\Controller;
+
+class stories extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function list_character($character_id = null)
-    {
+
+    public function list_stories($story_id = null){
         $data = array();
+        //Retreive all stores
+        $story = stories::where('story_id', '=', $story_id)->get();
+        //Store in data and move to model
+        $data['story'] = $story;
 
-        /*
-         * Retrieve all the Characters associated with this story
-         */
-        $character = Characters::where('story_id', '=', $character_id)->get();
+        return view('story/list', $data);
+    }
 
-        /*
-         * Store it in $data then move to the model
-         */
-        $data['Character'] = $character;
+    public function show($id)
+    {
+        //Pull data from database where story = id
+        $story = Story::where(compact('id'))->first();
+        return view('story/show' , compact('story'));
+    }
 
-        return view('character/list', $data);
+//    public function list_stories($story_id = null)
+//    {
+//
+//        $story = story::table('id')->get();
+//
+//        return view('story/list', ['id' => $story_id]);
+//    }
+
+
+    public function index()
+    {
+        //
     }
 
     /**
@@ -39,9 +55,8 @@ class StoryCharacters extends Controller
      */
     public function create()
     {
-        $data['story_id'] = 1;
-        return view('character.create', $data);
-
+        return view('story/create');
+        //creates the story
     }
 
     /**
@@ -50,12 +65,9 @@ class StoryCharacters extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(CharacterRequest $request)
+    public function store(StoryRequest $request)
     {
-        StoryCharacter::create($request->all());
-
-
-
+        story::create($request->all());
         return redirect()->back();
     }
 
@@ -65,10 +77,7 @@ class StoryCharacters extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
-    {
-        //
-    }
+
 
     /**
      * Show the form for editing the specified resource.
