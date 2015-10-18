@@ -21,6 +21,7 @@ Route::get('/', function () {
 Route::resource('scenery', 'StoryScenery');
 //Route::get('{story_id}/location/{id}', 'StoryScenery@show');
 Route::get('location/{id}', 'StoryScenery@show');
+Route::post('location/{id}/photos', 'StoryScenery@addPhoto');
 
 /*
  * Routes for Stories
