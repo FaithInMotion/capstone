@@ -14,6 +14,12 @@
     {{-- File uploads! --}}
     <form id="addPhotosForm" action="{{ $location->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
+    {{-- Photos added for this location --}}
+    @foreach ($location->photos as $photo)
+        <br>
+        <img src="/{{ $photo->path }}" alt="">
+    @endforeach
+
 @stop
 
 @section('scripts.footer')

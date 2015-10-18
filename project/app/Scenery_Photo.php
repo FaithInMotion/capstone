@@ -31,7 +31,7 @@ class Scenery_Photo extends Model
         /*
          * Set the save place
          */
-        $photo->path = $photo->basePath . "/" . $location_id . "/" . $name;
+        $photo->path = $photo->basePath . "/" . $name;
 
         $file->move($photo->basePath, $name);
 
