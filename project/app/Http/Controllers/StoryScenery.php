@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Scenery;
+use App\Scenery_Photo;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -64,9 +65,38 @@ class StoryScenery extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+//    public function show($story_id, $id)
     public function show($id)
     {
-        //
+        /*
+         * Returns the requested scenery as a location
+         */
+//        $scenery = Scenery::where(compact('story_id', 'id'))->first();
+        $location = Scenery::where(compact('id'))->first();
+
+        return view('scenery.show', compact('location'));
+    }
+
+    /**
+     * Stores the photo(s) given in Dropzone
+     */
+    public function addPhoto($location_id, Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
+
+        /*
+         * Create the photo object that will be stored
+         */
+        $photo = Scenery_Photo::fromForm($request->file('photo'), $location_id);
+
+        /*
+         * Store the link to the database
+         */
+        Scenery::foundAt($location_id)->addPhoto($photo);
+
+        return "Done";
     }
 
     /**

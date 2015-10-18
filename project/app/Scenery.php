@@ -15,6 +15,17 @@ class Scenery extends Model
 
     public function photos()
     {
-        return $this->hasMany('App\Scenery_Photos');
+        return $this->hasMany('App\Scenery_Photo');
+    }
+
+    public static function foundAt($location_id)
+    {
+        $id = (int) $location_id;
+        return static::where(compact('id'))->first();
+    }
+
+    public function addPhoto(Scenery_Photo $photo)
+    {
+        return $this->photos()->save($photo);
     }
 }

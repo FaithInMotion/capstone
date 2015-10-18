@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="fonts/HelveticaNeue/font.css">
     <link href="/styles.css" rel="stylesheet" media="screen">
     <link href="responsive.css" rel="stylesheet" media="screen">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
 </head>
 
 <body id="scroll_top">
@@ -247,6 +250,7 @@
             });
         </script>
 
+@yield('scripts.footer')
 
 </body>
 </html>

@@ -17,7 +17,7 @@ class CreateSceneryPhotosTable extends Migration
         Schema::create('scenery_photos', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('scenery_id')->unsigned();
-            $table->string('photo');
+            $table->string('path');
             $table->timestamps();
 
             $table->foreign('scenery_id')->references('id')->on('story_scenery')->onDelete('cascade');
