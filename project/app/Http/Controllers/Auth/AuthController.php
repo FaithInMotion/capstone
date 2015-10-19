@@ -21,6 +21,12 @@ class AuthController extends Controller
     |
     */
 
+    /*
+     * Where to redirect upon successful registration
+     * Picked the home directory since there are a few options for users here
+     */
+    protected $redirectPath = '/';
+
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**
