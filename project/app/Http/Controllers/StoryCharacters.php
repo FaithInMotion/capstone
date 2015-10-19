@@ -10,6 +10,11 @@ use App\Http\Requests\CharacterRequest;
 
 class StoryCharacters extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *

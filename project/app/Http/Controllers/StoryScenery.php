@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\App;
 
 class StoryScenery extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     /**
      * Display a listing of the resource.
      *
