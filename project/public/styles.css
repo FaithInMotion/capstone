@@ -481,6 +481,7 @@ ul{margin:0;padding:0;list-style:none;}
 .post_meta span{color: #000;font-family: georgia;margin:0px 5px;display:inline-block}
 .post_meta a:hover{color: #000;}
 
+/* form */
 /* Basic Grey */
 .basic-grey {
     margin-left:auto;
@@ -517,7 +518,7 @@ ul{margin:0;padding:0;list-style:none;}
     margin-top: 10px;
     color: #888;
 }
-.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey textarea, .basic-grey select {
+.basic-grey input[type="text"], .basic-grey input[type="email"], .basic-grey input[type="password"], .basic-grey textarea, .basic-grey select {
     border: 1px solid #DADADA;
     color: #888;
     height: 30px;

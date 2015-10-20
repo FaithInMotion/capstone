@@ -40,9 +40,10 @@
             <nav>
                 <ul id="nav2">
                     <li><a href="/">Home</a></li>
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Register</a></li>
+                    <li><a href="/auth/login">Login</a></li>
+                    <li><a href="/auth/register">Register</a></li>
                     <li><a href="/story/create">Create new Story</a></li>
+                    <li><a href="/auth/logout">Log out</a></li>
                 </ul>
             </nav>
         </div>

@@ -1,17 +1,18 @@
 @extends('layouts/master')
 
 @section('content')
+    <div class="container">
+        <div class="main_content floatleft">
 
-    <h1>{{ $location->name }}</h1>
-    <hr>
-    <p>{!! nl2br($location->description) !!}</p>
-
+    <div class="basic-grey">
+    <h1 class="basic-grey">{{ $location->name }}
+    <span>{!! nl2br($location->description) !!}</span>
+    </h1>
     {{-- Dropzone --}}
-    <br><br>
-    <h2>Add Reference Photos</h2>
+    <h2>Add pictures of your scenery</h2>
     <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
-    <br>
     {{-- File uploads! --}}
+        <br>
     <form id="addPhotosForm" action="{{ $location->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
     {{-- Photos added for this location --}}
@@ -19,7 +20,9 @@
         <br>
         <img src="/{{ $photo->path }}" alt="">
     @endforeach
-
+            </div>
+            </div>
+        </div>
 @stop
 
 @section('scripts.footer')
