@@ -15,7 +15,7 @@
                 </h1>
 
                 <label for="name"><span>Name:</span>
-                <input type="text" name="name" id="name" value="{{ old('name') }}" required>
+                <input type="text" name="name" id="name" value="{{ old('name') }}" >
                 </label>
 
                 <label for="email"><span>Email:</span>
@@ -27,7 +27,7 @@
                 </label>
 
                 <label for="password_confirmation"><span>Confirm Password:</span>
-                <input type="password" name="password_confirmation" id="password_confirmation" required>
+                <input type="password" name="password_confirmation" id="password_confirmation">
                 </label>
 
                 <label>
