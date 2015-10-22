@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CharacterRequest;
+use Illuminate\Support\Facades\App;
 
 class StoryCharacters extends Controller
 {
@@ -72,7 +73,8 @@ class StoryCharacters extends Controller
      */
     public function show($id)
     {
-        //
+        $character = StoryCharacter::where(compact('id'))->first();
+        return view('character.show' , compact('character'));
     }
 
     /**
