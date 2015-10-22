@@ -57,11 +57,11 @@ class StoryCharacters extends Controller
      */
     public function store(CharacterRequest $request)
     {
-        StoryCharacter::create($request->all());
+        $charcater = StoryCharacter::create($request->all());
+        $id = $charcater->id;
 
 
-
-        return redirect()->back();
+        return redirect()->route('charcater', [$id]);
     }
 
     /**

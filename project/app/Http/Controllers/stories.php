@@ -72,8 +72,11 @@ class stories extends Controller
      */
     public function store(StoryRequest $request)
     {
-        story::create($request->all());
-        return redirect()->back();
+        $story = story::create($request->all());
+
+        $id = $story->id;
+
+        return redirect()->route('story', [$id]);
     }
 
     /**
