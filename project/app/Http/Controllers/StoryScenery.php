@@ -79,6 +79,14 @@ class StoryScenery extends Controller
 //        $scenery = Scenery::where(compact('story_id', 'id'))->first();
         $location = Scenery::where(compact('id'))->first();
 
+        /*
+         * Redirect to CREATE if no location was found
+         */
+        if (empty($location))
+        {
+            return redirect()->action('StoryScenery@create');
+        }
+
         return view('scenery.show', compact('location'));
     }
 
