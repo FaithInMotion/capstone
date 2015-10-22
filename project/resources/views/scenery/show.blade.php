@@ -2,32 +2,28 @@
 
 @section('content')
 
-    @if(empty($location))
+    <div class="container">
+        <div class="main_content floatleft">
 
-    @else
-        <div class="container">
-            <div class="main_content floatleft">
+            <div class="basic-grey">
+                <h1 class="basic-grey">{{ $location->name }}
+                <span>{!! nl2br($location->description) !!}</span>
+                </h1>
+                {{-- Dropzone --}}
+                <h2>Add pictures of your scenery</h2>
+                <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
+                {{-- File uploads! --}}
+                    <br>
+                <form id="addPhotosForm" action="{{ $location->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
-                <div class="basic-grey">
-                    <h1 class="basic-grey">{{ $location->name }}
-                    <span>{!! nl2br($location->description) !!}</span>
-                    </h1>
-                    {{-- Dropzone --}}
-                    <h2>Add pictures of your scenery</h2>
-                    <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
-                    {{-- File uploads! --}}
-                        <br>
-                    <form id="addPhotosForm" action="{{ $location->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
-
-                    {{-- Photos added for this location --}}
-                    @foreach ($location->photos as $photo)
-                        <br>
-                        <img src="/{{ $photo->path }}" alt="">
-                    @endforeach
-                </div>
+                {{-- Photos added for this location --}}
+                @foreach ($location->photos as $photo)
+                    <br>
+                    <img src="/{{ $photo->path }}" alt="">
+                @endforeach
             </div>
-         </div>
-    @endif
+        </div>
+     </div>
 
 
 @stop
