@@ -33,7 +33,10 @@ Route::post('auth/register', 'Auth\AuthController@postRegister');
  */
 Route::resource('scenery', 'StoryScenery');
 //Route::get('{story_id}/location/{id}', 'StoryScenery@show');
-Route::get('location/{id}', 'StoryScenery@show');
+Route::get('location/{id}', [
+    'as' => 'location',
+    'uses' => 'StoryScenery@show'
+]);
 Route::post('location/{id}/photos', 'StoryScenery@addPhoto');
 
 /*
@@ -41,10 +44,19 @@ Route::post('location/{id}/photos', 'StoryScenery@addPhoto');
  */
 Route::resource('story', 'stories');
 Route::get('{id}', 'stories@show');
+//Route::get('{user_id}/{story_id}', 'Story@show');
+Route::get('story/{id}', [
+    'as' => 'story',
+    'uses' => 'Story@show'
+]);
 //Route::get('{user_id}/{story_id}', 'stories@show');
-
 
 /*
  * Routes for Characters
  */
 Route::resource('character', 'StoryCharacters');
+//Route::get('{story_id}/charcater/{id}', 'StoryCharacter@show');
+Route::get('character/{id}', [
+    'as' => 'charcater',
+    'uses' => 'CharacterScenery@show'
+]);

@@ -52,8 +52,8 @@ class StoryScenery extends Controller
         /*
          * Persist the data
          */
-        Scenery::create($request->all());
-
+        $location = Scenery::create($request->all());
+        $id = $location->id;
         /*
          * Flash message
          */
@@ -61,7 +61,7 @@ class StoryScenery extends Controller
         /*
          * Redirect to landing page
          */
-        return redirect()->back();
+        return redirect()->route('location', [$id]);
     }
 
     /**

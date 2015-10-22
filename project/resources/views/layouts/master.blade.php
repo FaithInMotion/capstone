@@ -137,8 +137,20 @@
                     <div class="fix single_footer_top floatleft">
                         <h2><span>Join</span></h2>
                         <ul>
-                            <li><a href="">Register</a></li>
-                            <li><a href="">Log in</a></li>
+                            <?php
+                            if (Auth::check()) {
+                                ?>
+                                <li><a href="/auth/login">Log out</a></li>
+                                <?php
+                                }
+                                else
+                                {
+                                    ?>
+                                <li><a href="/auth/register">Register</a></li>
+                                <li><a href="/auth/login">Log in</a></li>
+                                <?php
+                                }
+                                ?>
                         </ul>
                     </div>
                     <div class="fix single_footer_top floatleft">
