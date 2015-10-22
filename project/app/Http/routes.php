@@ -16,9 +16,25 @@ Route::get('/', function () {
 });
 
 /*
+ * Routes for Authentication
+ */
+
+// Authentication routes...
+Route::get('auth/login', 'Auth\AuthController@getLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
+
+// Registration routes...
+Route::get('auth/register', 'Auth\AuthController@getRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
+
+/*
  * Routes for Scenery
  */
 Route::resource('scenery', 'StoryScenery');
+//Route::get('{story_id}/location/{id}', 'StoryScenery@show');
+Route::get('location/{id}', 'StoryScenery@show');
+Route::post('location/{id}/photos', 'StoryScenery@addPhoto');
 
 /*
  * Routes for Stories

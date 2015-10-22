@@ -10,15 +10,7 @@
             <span>Please fill in all the fields.</span>
             </h1>
         {{--This checks for and displays errors in the form based on our validation method in the Request file--}}
-        @if (count($errors) > 0)
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+        @include('/errors/form_errors')
 
 
         @include('scenery.form')

@@ -10,6 +10,9 @@
     <link rel="stylesheet" href="fonts/HelveticaNeue/font.css">
     <link href="/styles.css" rel="stylesheet" media="screen">
     <link href="responsive.css" rel="stylesheet" media="screen">
+
+    <!-- Dropzone -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">
 </head>
 
 <body id="scroll_top">
@@ -36,10 +39,25 @@
         <div class="main_menu">
             <nav>
                 <ul id="nav2">
-                    <li><a href="/">Home</a></li>
-                    <li><a href="">Login</a></li>
-                    <li><a href="">Register</a></li>
-                    <li><a href="/story/create">Create new Story</a></li>
+                    <?php
+                    if (Auth::check()) {
+                        // The user is logged in...
+                        ?>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/story/create">Create new Story</a></li>
+                        <li><a href="/auth/logout">Log out</a></li>
+                        <?php
+                    }
+                            else
+                                {
+                        ?>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/auth/register">Register</a></li>
+                        <li><a href="/auth/login">Log in</a></li>
+
+                        <?php
+                            }
+                        ?>
                 </ul>
             </nav>
         </div>
@@ -120,7 +138,7 @@
                         <h2><span>Join</span></h2>
                         <ul>
                             <li><a href="">Register</a></li>
-                            <li><a href="">Sign in</a></li>
+                            <li><a href="">Log in</a></li>
                         </ul>
                     </div>
                     <div class="fix single_footer_top floatleft">
@@ -247,6 +265,7 @@
             });
         </script>
 
+@yield('scripts.footer')
 
 </body>
 </html>
