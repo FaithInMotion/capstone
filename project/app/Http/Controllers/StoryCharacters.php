@@ -77,6 +77,26 @@ class StoryCharacters extends Controller
         return view('character.show' , compact('character'));
     }
 
+    public function addPhoto($character_id, Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
+
+        /*
+         * Create the photo object that will be stored
+         */
+        $photo = Character_Photo::fromForm($request->file('photo'), $character_id);
+
+        /*
+         * Store the link to the database
+         */
+        StoryCharacter::foundAt($character_id)->addPhoto($photo);
+
+        return "Done";
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *
