@@ -44,6 +44,7 @@
                         // The user is logged in...
                         ?>
                         <li><a href="/">Home</a></li>
+                        <li><a href="">My Stories</a></li>
                         <li><a href="/story/create">Create new Story</a></li>
                         <li><a href="/auth/logout">Log out</a></li>
                         <?php
@@ -156,6 +157,7 @@
                     <div class="fix single_footer_top floatleft">
                         <h2><span>Create</span></h2>
                         <ul>
+                            <li><a href="">My Stories</a></li>
                             <li><a href="/story/create">Create a new story</a></li>
                         </ul>
                     </div>
@@ -164,7 +166,6 @@
                         <ul>
                             <li><a href="">Forum</a></li>
                             <li><a href="">Browse stories</a></li>
-                            <li><a href="">Read</a></li>
                         </ul>
                     </div>
 
