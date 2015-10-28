@@ -16,6 +16,7 @@
                     <h2>Add pictures of your character</h2>
                     <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
                     <br>
+                    
     <form id="addPhotosForm" action="{{ $character->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
     {{-- Photos added for this character --}}
