@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CharacterRequest;
+use Illuminate\Support\Facades\App;
 
 class StoryCharacters extends Controller
 {
@@ -72,8 +73,29 @@ class StoryCharacters extends Controller
      */
     public function show($id)
     {
-        //
+        $character = StoryCharacter::where(compact('id'))->first();
+        return view('character.show' , compact('character'));
     }
+
+    public function addPhoto($character_id, Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
+
+        /*
+         * Create the photo object that will be stored
+         */
+        $photo = Character_Photo::fromForm($request->file('photo'), $character_id);
+
+        /*
+         * Store the link to the database
+         */
+        StoryCharacter::foundAt($character_id)->addPhoto($photo);
+
+        return "Done";
+    }
+
 
     /**
      * Show the form for editing the specified resource.
