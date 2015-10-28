@@ -1,4 +1,4 @@
-@extends('layout/master')
+@extends('layouts/master')
 
 @section('content')
 
@@ -24,6 +24,7 @@
     <hr>
     <h1>The Character does not Exists</h1>
     <hr>
+    @endif
 @stop
 
 

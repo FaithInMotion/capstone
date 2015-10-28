@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\StoryCharacter;
+use App\Character_Photo;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
@@ -62,7 +63,7 @@ class StoryCharacters extends Controller
         $id = $charcater->id;
 
 
-        return redirect()->route('charcater', [$id]);
+        return redirect()->route('character_profile', [$id]);
     }
 
     /**

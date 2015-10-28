@@ -56,7 +56,8 @@ Route::get('story/{id}', [
  */
 Route::resource('character', 'StoryCharacters');
 //Route::get('{story_id}/charcater/{id}', 'StoryCharacter@show');
-Route::get('character/{id}', [
-    'as' => 'charcater',
-    'uses' => 'CharacterScenery@show'
+Route::get('character_profile/{id}', [
+    'as' => 'character_profile',
+    'uses' => 'StoryCharacters@show'
 ]);
+Route::post('character_profile/{id}/photos', 'StoryCharacters@addPhoto');
