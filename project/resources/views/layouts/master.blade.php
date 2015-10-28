@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="css/font-awesome.min.css">
     <link rel="stylesheet" href="fonts/HelveticaNeue/font.css">
     <link href="/styles.css" rel="stylesheet" media="screen">
-    <link href="responsive.css" rel="stylesheet" media="screen">
 
     <!-- Dropzone -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/dropzone/4.0.1/dropzone.css">

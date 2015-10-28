@@ -12,9 +12,7 @@
                 <h1 class="basic-grey">Login
                     <span>Please fill in all the fields.</span>
                 </h1>
-
-                @include('/errors/form_errors')
-
+                
                 <label for="email"><span>Email:</span>
                 <input type="email" name="email" id="email" value="{{ old('email') }}" required>
                 </label>
