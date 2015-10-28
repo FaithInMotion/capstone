@@ -2,15 +2,21 @@
 
 @section('content')
 
+    <div class="container">
+        <div class="main_content floatleft">
+
     @if(!empty($character))
-
-    <h1>{{$character->name }}</h1>
-    <hr>
-    <p>{!! nl2br($character->description) !!}</p>
-    <h3>{{ $character->age }}</h3>
-    <h3>{{ $character->height }}</h3>
-    <h3>{{ $character->weight }}</h3>
-
+                <div class="basic-grey">
+                    <h1 class="basic-grey">{{$character->name }}
+                    <span>{!! nl2br($character->description) !!}
+                        <br>Age: {{ $character->age }}
+                    <br>Height: {{ $character->height }}
+                    <br>Weight: {{ $character->weight }}</span>
+                        </h1>
+                    <h2>Add pictures of your character</h2>
+                    <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
+                    <br>
+                    
     <form id="addPhotosForm" action="{{ $character->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
     {{-- Photos added for this character --}}
@@ -25,6 +31,10 @@
     <h1>The Character does not Exists</h1>
     <hr>
     @endif
+
+                </div>
+        </div>
+    </div>
 @stop
 
 
