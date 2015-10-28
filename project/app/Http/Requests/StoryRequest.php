@@ -26,7 +26,7 @@ class StoryRequest extends Request
         return [
             'title'     => 'required',
             'genre'     => 'required',
-            'synopsis'  => 'required'
+            'synopsis'  => 'required',
         ];
     }
 }

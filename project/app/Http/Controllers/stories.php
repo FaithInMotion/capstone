@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\story;
+use App\Story_Photo;
 use App\Http\Requests;
 use App\Http\Requests\StoryRequest;
 use App\Http\Controllers\Controller;
@@ -22,10 +23,13 @@ class stories extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function list_stories($story_id = null){
+    public function list_stories($story_id)
+    {
         $data = array();
+
         //Retreive all stores
         $story = stories::where('story_id', '=', $story_id)->get();
+
         //Store in data and move to model
         $data['story'] = $story;
 
@@ -34,19 +38,42 @@ class stories extends Controller
 
     public function show($id)
     {
-        //Pull data from database where story = id
-        $story = Story::where(compact('id'))->first();
-        return view('story/show' , compact('story'));
+        $story = story::where(compact('id'))->first();
+        //if database is NOT empty redirect continue to Retreive
+
+        if( !empty( $story ) )
+        {
+            //Pull data from database where story = id
+            return view( 'story/show' , compact( 'story' ) );
+        }
+        //else redirect to create page
+        else
+        {
+            return redirect()->action( 'stories@create' );
+        }
     }
 
-//    public function list_stories($story_id = null)
-//    {
-//
-//        $story = story::table('id')->get();
-//
-//        return view('story/list', ['id' => $story_id]);
-//    }
+    /**
+     * Stores the photo(s) given in Dropzone
+     */
+    public function addPhoto($story_id, Request $request)
+    {
+        $this->validate($request, [
+            'photo' => 'required|mimes:jpg,jpeg,png'
+        ]);
 
+        /*
+         * Create the photo object that will be stored
+         */
+        $photo = Story_Photo::fromForm( $request->file( 'photo' ), $story_id );
+
+        /*
+         * Store the link to the database
+         */
+        story::foundAt( $story_id )->addPhoto( $photo );
+
+        return "Done";
+    }
 
     public function index()
     {
@@ -60,7 +87,8 @@ class stories extends Controller
      */
     public function create()
     {
-        return view('story/create');
+        $data['story_id'] = 1;
+        return view( 'story/create', $data );
         //creates the story
     }
 

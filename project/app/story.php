@@ -14,4 +14,30 @@ class story extends Model
         'genre',
         'synopsis'
     ];
+
+    public function photos()
+    {
+        return $this->hasMany('App\Story_Photo');
+    }
+
+    public static function foundAt($story_id)
+    {
+        $id = (int) $story_id;
+        return static::where(compact('id'))->first();
+    }
+
+    public function addPhoto(Story_Photo $photo)
+    {
+        return $this->photos()->save($photo);
+    }
+
+
+
+
+
+
+
+
+
+
 }

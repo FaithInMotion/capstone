@@ -16,7 +16,7 @@ class CreateStoriesTable extends Migration
         Schema::create('user_stories', function($table)
         {
 //          $table->integer('user_id')->unsigned();
-            $table->increments('id')->unsigned();
+            $table->increments('id');
             $table->string('title', 200);
             $table->string('genre', 200);
             $table->string('synopsis', 1024);
