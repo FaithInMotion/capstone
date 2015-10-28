@@ -16,4 +16,21 @@ class StoryCharacter extends Model
         'height'
 
     ];
+
+    public function photos()
+    {
+        return $this->hasMany('App\Character_Photo');
+    }
+
+    public static function foundAt($character_id)
+    {
+        $id = (int) $character_id;
+        return static::where(compact('id'))->first();
+    }
+
+
+    public function addPhoto(Character_Photo $photo)
+    {
+        return $this->photos()->save($photo);
+    }
 }
