@@ -4,6 +4,8 @@
 
 @section('content')
 
+    @include('/errors/form_errors')
+
     @if (count($character) == 0)
         <h1>There are no characters added to this story yet!</h1>
     @else

@@ -5,6 +5,9 @@
     <div class="container">
         <div class="main_content floatleft">
 
+            {{--This checks for and displays errors in the form based on our validation method in the Request file--}}
+            @include('/errors/form_errors')
+
     @if(!empty($character))
                 <div class="basic-grey">
                     <h1 class="basic-grey">{{$character->name }}
