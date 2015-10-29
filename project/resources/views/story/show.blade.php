@@ -2,7 +2,6 @@
 
 @section('content')
 
-
 <div class="container">
     <div class="main_content floatleft">
         <div class="basic-grey">
@@ -19,20 +18,22 @@
                 </span>
             </h1>
 
-            <h5>
-                Add "{{ $story->title }}" art
-            </h5>
-
-            <form id="addPhotosForm" action="{{ $story->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
             {{-- Photos added for this location --}}
-]            @if( !$story->photos->isEmpty() )
+            @if( !$story->photos->isEmpty() )
 
+                <p>Artwork for "{{ $story->title}}"</p>
+                <hr>
                 @foreach ($story->photos as $photo)
-                <br>
-                <img src="/{{ $photo->path }}" alt="">
+
+                    <br><img src="/{{ $photo->path }}" alt=""><br>
+                    <span><i>{{$photo->created_at}}</i></span>
+
                 @endforeach
+                <hr><br>
 
             @endif
+            <p>Add artwork to "{{ $story->title }}"</p>
+            <form id="addPhotosForm" action="{{ $story->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
         </div>
     </div>
