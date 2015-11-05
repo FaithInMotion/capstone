@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests;
+use App\story;
 use App\Http\Controllers\Controller;
 
 class IndexController extends Controller
@@ -11,6 +12,8 @@ class IndexController extends Controller
     public function welcome()
     {
         $story = stories::find(array('last'));
+
+        return view('welcome' , compact('story'));
 
     }
 
