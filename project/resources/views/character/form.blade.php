@@ -1,5 +1,4 @@
 {{ csrf_field() }}
-
 <label for="name"><span>Name: </span>
     <input type="text" name="name" id="name" class="form-control" placeholder="Character Name" value="">
 </label>
