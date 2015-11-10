@@ -11,9 +11,13 @@ class IndexController extends Controller
 {
     public function welcome()
     {
-        $story = stories::find(array('last'));
+        $stories = story::take(11)->get();
+//        $stories = $query->toArray();
+//        $data['feature_1'] = array_shift($stories) ;
+//        $data['feature_2'] = array_shift($stories);
+//        $data['stories'] = $stories;
 
-        return view('welcome' , compact('story'));
+        return view('welcome', compact('stories'));
 
     }
 

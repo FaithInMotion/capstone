@@ -5,11 +5,9 @@
 <div class="fix single_sidebar">
     <h2><span>Recent Stories</span></h2>
     <ul>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
+        @for($n=10; $n>=6; $n--)
+            <li><a href="">{{$stories[$n]->title}}</a></li>
+        @endfor
     </ul>
 </div>
 <div class="fix single_sidebar">
