@@ -10,5 +10,6 @@ class SceneryControllerTest extends TestCase
     public function create_scenery_form_shown()
     {
         $this->visit('scenery/create');
+        $this->see('Create Scenery');
     }
 }
