@@ -37,6 +37,9 @@ class ComposerServiceProvider extends ServiceProvider
 
     public function boot()
     {
-
+        view()->composer('layouts.sidebar.main', function($view)
+        {
+            $view->with('stories', story::take(11)->get());
+        });
     }
 }

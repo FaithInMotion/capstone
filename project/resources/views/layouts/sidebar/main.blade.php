@@ -5,9 +5,11 @@
 <div class="fix single_sidebar">
     <h2><span>Recent Stories</span></h2>
     <ul>
+       @if (Auth::check())
         @for($n=10; $n>=6; $n--)
             <li><a href="">{{$stories[$n]->title}}</a></li>
         @endfor
+           @endif
     </ul>
 </div>
 <div class="fix single_sidebar">
