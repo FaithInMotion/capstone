@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: JaQuise
- * Date: 11/11/2015
- * Time: 7:33 PM
- */
 
 use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
@@ -19,6 +13,7 @@ class StoryControllerTest extends TestCase
         $this->type('My Title', 'title');
         $this->type('rap', 'genre');
         $this->type('a story about a woman', 'synopsis');
+        $this->press('create');
     }
 
 
