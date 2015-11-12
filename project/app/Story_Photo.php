@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\BaseModel;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 

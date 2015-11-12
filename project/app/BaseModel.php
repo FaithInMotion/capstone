@@ -9,6 +9,9 @@ class BaseModel extends \Eloquent
      * query scope nPerGroup
      *
      * @return void
+     *
+     * Copied from
+     * http://softonsofa.com/tweaking-eloquent-relations-how-to-get-n-related-models-per-parent/
      */
     public function scopeNPerGroup($query, $group, $n = 10)
     {

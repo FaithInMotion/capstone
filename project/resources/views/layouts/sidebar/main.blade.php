@@ -5,7 +5,7 @@
 <div class="fix single_sidebar">
     <h2><span>Recent Stories</span></h2>
     <ul>
-        @foreach ($stories as $story)
+        @foreach($stories as $story)
             <li><a href="">{{$story->title}}</a></li>
         @endforeach
     </ul>
