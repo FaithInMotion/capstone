@@ -34,9 +34,4 @@ class ComposerServiceProvider extends ServiceProvider
     {
         return ['composer'];
     }
-
-    public function boot()
-    {
-
-    }
 }
