@@ -136,7 +136,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Foundation\Providers\ComposerServiceProvider::class,
+//        Illuminate\Foundation\Providers\ComposerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -145,7 +145,7 @@ return [
         App\Providers\AuthServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-        App\Providers\ComposerServiceProvider::class
+//        App\Providers\ComposerServiceProvider::class
 
     ],
 
