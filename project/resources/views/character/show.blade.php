@@ -8,10 +8,11 @@
     @if(!empty($character))
                 <div class="basic-grey">
                     <h1 class="basic-grey">{{$character->name }}
-                    <span>{!! nl2br($character->description) !!}
-                        <br>Age: {{ $character->age }}
-                    <br>Height: {{ $character->height }}
-                    <br>Weight: {{ $character->weight }}</span>
+                    <span>
+                        <b>Age: </b> {{ $character->age }}
+                        <br><b>Height: </b> {{ $character->height }}
+                        <br><b>Weight: </b> {{ $character->weight }}
+                        <br><b>Description: </b>{!! nl2br($character->description) !!}</span>
                         </h1>
                     <h2>Add pictures of your character</h2>
                     <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
