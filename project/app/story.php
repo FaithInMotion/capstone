@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class story extends Model
+class story extends BaseModel
 {
     protected $table = 'user_stories';
 
@@ -17,6 +17,16 @@ class story extends Model
     public function photos()
     {
         return $this->hasMany('App\Story_Photo');
+    }
+
+    /**
+     * Get latest uploaded photo from hasMany relation.
+     *
+     * @return Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function latestPhoto()
+    {
+        return $this->photos()->latest()->nPerGroup('story_id', 1);
     }
 
     public static function foundAt($story_id)

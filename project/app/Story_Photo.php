@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
-class Story_Photo extends Model
+class Story_Photo extends BaseModel
 {
     protected $table = "story_photos";
 

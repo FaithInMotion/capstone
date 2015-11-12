@@ -2,12 +2,11 @@
 @section('content')
     <div class="container">
         <div class="main_content floatleft">
-
             <h2>Featured Stories</h2>
             <div class="fix main_content_container">
                 <div class="fix single_content floatleft">
                     <div class="fix single_content_feature">
-                        <a href=""><img src="images/feature.png" alt=""/></a>
+                        <a href=""><img src="{{$stories[0]->latestPhoto[0]->path}}" alt=""/></a>
                         <h3><a href="">{{$stories[0]->title}}</a></h3>
                         <span>{{$stories[0]->created_at}} <a href="">8 Comments</a></span>
                         <p>{{$stories[0]->synopsis}}</p>
