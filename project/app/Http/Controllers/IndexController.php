@@ -12,7 +12,7 @@ class IndexController extends Controller
 {
     public function welcome()
     {
-        $stories = story::with('latestPhoto')->orderBy('created_at', 'asc')->take(11)->get();
+        $stories = story::with('latestPhoto')->orderBy('created_at', 'desc')->take(11)->get();
 
         return view('welcome', compact('stories'));
     }
