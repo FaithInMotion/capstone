@@ -26,7 +26,7 @@ class AuthControllerTest extends TestCase
         $this->check('remember');
         $this->press('submit');
         $this->seePageIs('character/create');
-        
+
 
     }
 
