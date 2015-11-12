@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Providers;
+namespace Illuminate\Foundation\Providers;
 
-use Illuminate\Support\ServiceProvider;
+use Illuminate\Foundation\Composer;
 
 class ComposerServiceProvider extends ServiceProvider
 {
