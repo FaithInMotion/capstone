@@ -15,7 +15,7 @@ class AuthControllerTest extends TestCase
         $this->type('antonio12', 'password');
         $this->type('antonio12', 'confirmation_password');
         $this->press('submit');
-        $this->seePageIs('auth/login.blade');
+        $this->seePageIs('character/create');
     }
 
     public function user_login()
@@ -26,8 +26,7 @@ class AuthControllerTest extends TestCase
         $this->check('remember');
         $this->press('submit');
         $this->seePageIs('character/create');
-        $this->seePageIs('scenery/create');
-        $this->seePageIs('story/create');
+        
 
     }
 
