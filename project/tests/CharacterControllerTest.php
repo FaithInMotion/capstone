@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class CharacterControllerTest extends TestCase
 {
-    /** @test */
+    /** @test
     public function create_character_form()
     {
         $this->visit('character/create');
@@ -18,3 +18,4 @@ class CharacterControllerTest extends TestCase
     }
 
 }
+*/
