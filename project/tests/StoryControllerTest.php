@@ -11,7 +11,7 @@ class StoryControllerTest extends TestCase
     {
         $this->visit('story/create');
         $this->type('My Title', 'title');
-        $this->type('rap', 'genre');
+        $this->type('horror', 'genre');
         $this->type('a story about a woman', 'synopsis');
         $this->press('submit');
     }

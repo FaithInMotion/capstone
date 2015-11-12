@@ -11,7 +11,7 @@ class CharacterControllerTest extends TestCase
     {
         $this->visit('character/create');
         $this->type('a big guy', 'description');
-        $this->type('a dark room', 'age');
+        $this->type('21', 'age');
         $this->type('5"7', 'height');
         $this->type('135', 'weight');
         $this->press('submit');
