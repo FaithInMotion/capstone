@@ -6,7 +6,7 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AuthControllerTest extends TestCase
 {
-    /** @test */
+    /** @test
     public function user_registration()
     {
         $this->visit('auth/register.blade');
@@ -29,5 +29,5 @@ class AuthControllerTest extends TestCase
 
 
     }
-
+*/
 }
