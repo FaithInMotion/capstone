@@ -6,7 +6,7 @@
     <h2><span>Recent Stories</span></h2>
     <ul>
         @foreach($stories as $story)
-            <li><a href="">{{$story->title}}</a></li>
+            <li><a href="\story\{{$story->id}}">{{$story->title}}</a></li>
         @endforeach
     </ul>
 </div>
