@@ -5,11 +5,9 @@
 <div class="fix single_sidebar">
     <h2><span>Recent Stories</span></h2>
     <ul>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
-        <li><a href="">Story Title</a></li>
+        {{--@foreach ($stories as $story)--}}
+            {{--<li><a href="">{{$story->title}}</a></li>--}}
+        {{--@endforeach--}}
     </ul>
 </div>
 <div class="fix single_sidebar">
