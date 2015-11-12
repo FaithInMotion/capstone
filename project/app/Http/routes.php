@@ -11,9 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'IndexController@welcome');
 
 /*
  * Routes for Authentication
@@ -43,13 +41,14 @@ Route::post('location/{id}/photos', 'StoryScenery@addPhoto');
  * Routes for Stories
  */
 Route::resource('story', 'stories');
-Route::get('{id}', 'stories@show');
-//Route::get('{user_id}/{story_id}', 'Story@show');
+//Route::get('{id}', 'stories@show');
+//Route::get('{user_id}/{story_id}', 'stories@show');
 Route::get('story/{id}', [
     'as' => 'story',
     'uses' => 'Story@show'
 ]);
-//Route::get('{user_id}/{story_id}', 'stories@show');
+Route::post('story/{id}/photos/', 'stories@addPhoto');
+
 
 /*
  * Routes for Characters
