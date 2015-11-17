@@ -28,6 +28,11 @@
             <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
             <form id="addPhotosForm" action="{{ $story->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
 
+            <br>
+            <a href="/scenery/create">Add Scenery to your story</a>
+            <br>
+            <a href="/character/create">Add Characters to your story</a>
+
         </div>
     </div>
 </div>
