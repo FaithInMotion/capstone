@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use App\User;
+
 class story extends BaseModel
 {
     protected $table = 'user_stories';
@@ -11,8 +13,14 @@ class story extends BaseModel
     protected $fillable = [
         'title',
         'genre',
-        'synopsis'
+        'synopsis',
+        'user_id'
     ];
+
+    public function user()
+    {
+        return $this->belongsTo('App\User');
+    }
 
     public function photos()
     {

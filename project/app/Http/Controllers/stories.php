@@ -9,6 +9,8 @@ use App\Story_Photo;
 use App\Http\Requests;
 use App\Http\Requests\StoryRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class stories extends Controller
 {
@@ -87,7 +89,11 @@ class stories extends Controller
      */
     public function create()
     {
-        $data['story_id'] = 1;
+        /*
+         * Get the user id and send it through with data
+         */
+        $data['user_id'] = Auth::id();
+
         return view( 'story/create', $data );
         //creates the story
     }

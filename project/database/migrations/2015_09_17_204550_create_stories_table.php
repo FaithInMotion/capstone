@@ -15,7 +15,7 @@ class CreateStoriesTable extends Migration
         Schema::dropIfExists('user_stories');
         Schema::create('user_stories', function($table)
         {
-//          $table->integer('user_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->increments('id');
             $table->string('title', 200);
             $table->string('genre', 200);
@@ -23,10 +23,10 @@ class CreateStoriesTable extends Migration
             $table->timestamps();
         });
 
-//        Schema::table('user_stories', function($table)
-//        {
-//            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-//        });
+        Schema::table('user_stories', function($table)
+        {
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+        });
     }
 
     /**
