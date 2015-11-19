@@ -8,32 +8,30 @@
 
             <h1 class="basic-grey">
                 {{ $story->title }}
-                <span>{{ $story->genre }}</span>
-            </h1>
-
-            <h1 class="basic-grey">
-                Synopsis
-                <span>
-                    <P>{{ $story->synopsis }}</P>
-                </span>
+                <span>{{ $story->genre }}
+                <P>{{ $story->synopsis }}</P>
+                    </span>
             </h1>
 
             {{-- Photos added for this location --}}
             @if( !$story->photos->isEmpty() )
-
-                <p>Artwork for "{{ $story->title}}"</p>
-                <hr>
+                <p>Artwork for "{{ $story->title }}"</p>
                 @foreach ($story->photos as $photo)
 
                     <br><img src="/{{ $photo->path }}" alt=""><br>
-                    <span><i>{{$photo->created_at}}</i></span>
 
                 @endforeach
                 <hr><br>
 
             @endif
-            <p>Add artwork to "{{ $story->title }}"</p>
+            <h2>Add pictures of your story</h2>
+            <p>Files under 3 MB allowed: .jpg, .jpeg, .png</p>
             <form id="addPhotosForm" action="{{ $story->id }}/photos" method="POST" class="dropzone">{{ csrf_field() }}</form>
+
+            <br>
+            <a href="/scenery/create">Add Scenery to your story</a>
+            <br>
+            <a href="/character/create">Add Characters to your story</a>
 
         </div>
     </div>
