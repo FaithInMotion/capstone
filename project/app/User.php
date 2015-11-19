@@ -11,6 +11,7 @@ use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use App\story;
+use App\StoryCharacter;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -45,5 +46,10 @@ class User extends Model implements AuthenticatableContract,
     public function stories()
     {
         return $this->hasMany('App\story');
+    }
+
+    public function characters()
+    {
+        return $this->hasMany('App\StoryCharacter');
     }
 }

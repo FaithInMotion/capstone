@@ -166,6 +166,8 @@ class stories extends Controller
 ";
         $story->Save();
 
+        print_r('saved 1');
+
         $story = new story();
         $story->user_id = Auth::id();
         $story->title= "The Da Vinci Code";

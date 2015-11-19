@@ -60,3 +60,8 @@ Route::get('character_profile/{id}', [
     'uses' => 'StoryCharacters@show'
 ]);
 Route::post('character_profile/{id}/photos', 'StoryCharacters@addPhoto');
+
+/*
+ * Seed the database
+ */
+Route::get('stories/seed_database', 'stories@seed_story_table');
