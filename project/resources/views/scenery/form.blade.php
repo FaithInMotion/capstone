@@ -1,6 +1,8 @@
 {{--This is absolutely required--}}
 {{ csrf_field() }}
 
+    <input type="hidden" name="user_id" value="{{ $user_id }}" />
+
     <label for="name"><span>Name: </span>
     <input type="text" name="name" id="name" placeholder="Scenery Name" value="{{ old('title') }}" required />
     </label>

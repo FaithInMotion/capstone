@@ -9,6 +9,7 @@
         <h1 class="basic-grey">Create A New Story
             <span>Please fill in all the fields.</span>
         </h1>
+
         @include('story.form')
     </form>
         </div>

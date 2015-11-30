@@ -40,4 +40,13 @@ class Story_Photo extends BaseModel
 
         return $photo;
     }
+
+    public static function getDefaultPhoto($story_id)
+    {
+        $photo = new static;
+        $photo->story_id = (int) $story_id;
+        $photo->path = $photo->basePath."/default.jpg";
+
+        return $photo;
+    }
 }

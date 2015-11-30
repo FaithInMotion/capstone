@@ -9,6 +9,7 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\CharacterRequest;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class StoryCharacters extends Controller
 {
@@ -46,6 +47,7 @@ class StoryCharacters extends Controller
      */
     public function create()
     {
+        $data['user_id'] = Auth::id();
         $data['story_id'] = 1;
         return view('character.create', $data);
 

@@ -10,6 +10,7 @@ use App\Http\Controllers\Controller;
 
 use App\Http\Requests\SceneryRequest;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 class StoryScenery extends Controller
 {
@@ -35,7 +36,7 @@ class StoryScenery extends Controller
      */
     public function create()
     {
-        $data['story_id'] = 1;
+        $data['user_id'] = Auth::id();
 
         return view('scenery.create', $data);
     }

@@ -10,6 +10,10 @@ use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
 use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
+use App\story;
+use App\StoryCharacter;
+use App\Scenery;
+
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
                                     CanResetPasswordContract
@@ -36,4 +40,22 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /*
+     * Relationship methods
+     */
+    public function stories()
+    {
+        return $this->hasMany('App\story');
+    }
+
+    public function characters()
+    {
+        return $this->hasMany('App\StoryCharacter');
+    }
+
+    public function locations()
+    {
+        return $this->hasMany('App\Scenery');
+    }
 }

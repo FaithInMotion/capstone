@@ -1,5 +1,7 @@
 {{ csrf_field() }}
 
+<input type="hidden" name="user_id" value="{{ $user_id }}" />
+
 <!--TITLE-->
     <label for="title"><span>Title: </span>
     <input type="text" name="title" id="title" class="form-control" placeholder="Story's Title">

@@ -9,6 +9,8 @@ use App\Story_Photo;
 use App\Http\Requests;
 use App\Http\Requests\StoryRequest;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
 
 class stories extends Controller
 {
@@ -87,7 +89,11 @@ class stories extends Controller
      */
     public function create()
     {
-        $data['story_id'] = 1;
+        /*
+         * Get the user id and send it through with data
+         */
+        $data['user_id'] = Auth::id();
+
         return view( 'story/create', $data );
         //creates the story
     }
@@ -159,6 +165,8 @@ class stories extends Controller
         $story->synopsis = "The nation of Panem, formed from a post-apocalyptic North America, is a country that consists of a wealthy Capitol region surrounded by 12 poorer districts. Early in its history, a rebellion led by a 13th district against the Capitol resulted in its destruction and the creation of an annual televised event known as the Hunger Games. In punishment, and as a reminder of the power and grace of the Capitol, each district must yield one boy and one girl between the ages of 12 and 18 through a lottery system to participate in the games. The 'tributes' are chosen during the annual Reaping and are forced to fight to the death, leaving only one survivor to claim victory.
 ";
         $story->Save();
+
+        print_r('saved 1');
 
         $story = new story();
         $story->user_id = Auth::id();
