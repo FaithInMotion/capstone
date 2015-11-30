@@ -12,6 +12,7 @@ use Illuminate\Contracts\Auth\CanResetPassword as CanResetPasswordContract;
 
 use App\story;
 use App\StoryCharacter;
+use App\Scenery;
 
 class User extends Model implements AuthenticatableContract,
                                     AuthorizableContract,
@@ -51,5 +52,10 @@ class User extends Model implements AuthenticatableContract,
     public function characters()
     {
         return $this->hasMany('App\StoryCharacter');
+    }
+
+    public function locations()
+    {
+        return $this->hasMany('App\Scenery');
     }
 }
